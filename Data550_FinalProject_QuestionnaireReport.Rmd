@@ -1,0 +1,53 @@
+---
+title: "MYSTIC Questionnaire Report(Data 550 Final Project Version)"
+author: "Jeffrey Gong"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, warning=F,message=F)
+```
+
+## Introduction
+
+This dataset is from a study investigating the effects of a specially designed dance class intervention on participants with Parkinson's disease. The data includes demographic information, results from pre and post questionnaires and physical/mental assessments, and measures of participants' physical/mental exertion and heart rate during classes. The goal of the analysis is to find if there is statistically significant pre-post improvement in the participants' motor and cognitive functions as measured by the pre-post questionnaires and assessments. Additionally, we will investigate the difference in pre-post improvement between participants who learned temporal and spatial patterns simultaneously and participants who learned temporal and spatial patterns separately. 
+
+
+```{r}
+library(here)
+```
+
+## Table 1: Participant demographics and physical characteristics
+
+This table shows the demographic information of the participants in the study, divided by the intervention groups: Coupled, who learned temporal and spatial dance patterns at the same time, and Isolated, who learned temporal and spatial dance patterns separately. The table also contains information about the participants' Parkinson's disease status, including how many years ago they were diagnosed and how many falls they experienced in the past year.
+
+```{r}
+readRDS(here("Outputs/table_one.rds"))
+```
+
+## Table 2.1: Psychosocial Outcomes, Pre vs Post, by ISO v COU: Mean(SD)
+
+This table contains the scores of psychosocial questionnaires taken by the participants, pre and post intervention, stratified by intervention group.
+
+```{r}
+readRDS(here("Outputs/table_two.rds"))
+```
+
+## Table 2.2: Psychosocial Outcomes: Random Intercept Linear Models
+
+This table shows the model coefficients and associated p-values for random intercept linear models fit to predict a participant's questionnaire score using which intervention group they were in, whether the questionnaire was taken pre or post intervention, and the interaction of those two variables. The random intercept was the participant.
+
+```{r}
+readRDS(here("Outputs/table_three.rds"))
+```
+
+
+## Exit Questionnaires
+
+This figure visualizes the participants' responses in exit questionnaires. The bars to the right represent the proportion who agreed with the prompt, and the bars to the left represent the proportion who disagreed. The colors represent the degree of agreement/disagreement. 
+
+```{r}
+readRDS(file=here("Outputs/exit_plot.rds"))
+```
+
