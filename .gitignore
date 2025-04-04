@@ -5,7 +5,6 @@ Data550FinalProject.Rproj
 Data550_FinalProject_Part2.Rmd
 Data550_FinalProject_Part2.html
 Data/*.csv
-Data/*.rds
 CleanData/*.rds
 Outputs/*.rds
 RevisedData.R
