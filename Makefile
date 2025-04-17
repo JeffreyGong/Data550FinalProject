@@ -21,3 +21,7 @@ Outputs/exit_plot.rds: Code/04_exit_qs.R CleanData/wide_data_clean.rds
 clean:
 	rm Outputs/*.rds && \
 	rm CleanData/*.rds
+	
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt=FALSE)"
