@@ -2,12 +2,27 @@ Data 550 Final Project
 ================
 Jeffrey Gong
 
+# Building the Docker Image
+
+To build a docker image that can reproduce this analysis, run the following command in the terminal:
+
+>docker build -t jeffreygong9900/data550finalproject .
+
+# Link to Image on Dockerhub
+
+The following is a link to the built image on Dockerhub:
+
+https://hub.docker.com/repository/docker/jeffreygong9900/data550finalproject/general
+
 # Generating the Final Report
 
-Generate the report by simply running this command in the terminal:
+If you are using Windows, generate the report by simply running this command in the terminal, after building or downloading the Docker image:
 
->docker run -v "/$(pwd)"/report:/home/rstudio/project final_stage4
+>make report/Data550_FinalProject_QuestionnaireReport.html
 
+If you are using Mac/Linux, run this command instead:
+
+>make report_mac
 
 The report is about a study on the effect of a dance intervention on PD
 patients, and contains a table describing the demographics of the

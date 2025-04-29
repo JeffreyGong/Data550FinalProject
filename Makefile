@@ -19,13 +19,16 @@ Outputs/exit_plot.rds: Code/04_exit_qs.R CleanData/wide_data_clean.rds
 	Rscript Code/04_exit_qs.R
 	
 clean:
-	rm Outputs/*.rds && \
-	rm CleanData/*.rds
-	rm report/*.html
+	rm Outputs/*.rds CleanData/*.rds report/*.html
 	
 .PHONY: install
 install:
 	Rscript -e "renv::restore(prompt=FALSE)"
 	
 report/Data550_FinalProject_QuestionnaireReport.html:
-	docker run -v /"$$(pwd)/report":/home/rstudio/project/report final_stage4
+	docker run -v /"$$(pwd)/report":/home/rstudio/project/report jeffreygong9900/data550finalproject
+	
+.PHONY: report_mac
+report_mac:
+	docker run -v "$$(pwd)/report":/home/rstudio/project/report jeffreygong9900/data550finalproject
+	
