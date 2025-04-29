@@ -4,13 +4,19 @@ Jeffrey Gong
 
 # Generating the Final Report
 
-Generate the report by simply running the command make in the terminal.
+Generate the report by simply running this command in the terminal:
+
+>docker run -v "/$(pwd)"/report:/home/rstudio/project final_stage4
+
+
 The report is about a study on the effect of a dance intervention on PD
 patients, and contains a table describing the demographics of the
 patients, a table with their scores on psychosocial questionnaires, a
 table detailing linear models built to predict their psychosocial
 questionnaire scores, and a plot visualizing their responses to exit
 questionnaires.
+
+
 
 ## File Organization
 
